@@ -1,0 +1,70 @@
+.edit-profile-container {
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.edit-form-wrapper {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  padding: 50px 20px;
+}
+
+.edit-form-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+
+.helptext {
+  display: none;
+}
+
+input {}
+
+#id_username,
+#id_email,
+#id_first_name,
+#id_last_name {
+  display: block;
+  margin-top: 10px;
+  border: 2px solid black;
+  padding-left: 20px;
+  height: 40px;
+  width: 200px;
+  border-radius: 7px;
+
+}
+
+
+
+.edit-submit-btn {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.edit-submit-btn a {
+  padding: 10px 40px;
+  background-color: gray;
+
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.edit-submit-btn button {
+  padding: 10px 40px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border-radius: 20px;
+
+}

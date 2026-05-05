@@ -1,0 +1,35 @@
+footer {
+  margin-top: 40px;
+  background-color: rgb(198, 198, 198);
+  position: relative;
+  bottom: 0;
+  padding: 40px 0;
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer-link {
+  display: flex;
+  gap: 90px;
+}
+
+.copyright {
+  display: flex;
+  gap: 70px;
+
+}
+
+.links {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-link li {
+  list-style: none;
+}

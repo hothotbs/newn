@@ -1,0 +1,42 @@
+{% extends "users/base.html" %}
+{% load static%}
+{% load humanize %}
+
+
+
+{%block content%}
+<div class="title">
+  <h1>
+    Make Deposit
+  </h1>
+</div>
+<div>
+
+  {%if messages%}
+  {%for message in messages%}
+  <div>
+    {{message}}
+  </div>
+  {%endfor%}
+  {%endif%}
+
+  <form class="withdraw-form" method="POST">
+    {%csrf_token%}
+
+
+    <div class="deposit-field-wrapper">
+
+      {{form.mode_of_payment.label_tag}}
+      {{form.mode_of_payment}}
+
+
+    </div>
+
+    <button class="withdraw-btn" type="submit">
+      Next
+    </button>
+  </form>
+</div>
+
+
+{% endblock %}

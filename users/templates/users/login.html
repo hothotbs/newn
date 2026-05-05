@@ -1,0 +1,43 @@
+{% extends 'homepage/base.html'%}
+{% load static%}
+
+{% block content %}
+<div class="form">
+  <div class="form-wrapper">
+    <div class="form-head">
+      <h1>
+        LOGIN INTO ACCOUNT
+      </h1>
+    </div>
+    {%if messages%}
+    {%for message in messages%}
+    <div class="message">
+
+      {{message}}
+    </div>
+    {%endfor%}
+    {%endif%}
+    <div class="fields-wrapper">
+
+      <div class="field-wrapper">
+        <form method="POST">
+          {%csrf_token%}
+          {{form}}
+          <p class="forget-pwd">
+            <a href="{%url 'reset-password-link'%}">Forget Password</a>
+          </p>
+          <button class="submit-btn" type="submit">
+            Login
+          </button>
+        </form>
+      </div>
+
+
+      <p class="existed-acct">
+        Don't Have An Account! <a href="{%url 'create-account'%}">Create Account</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+{%endblock%}

@@ -1,0 +1,142 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wallet app</title>
+  <link rel="stylesheet" href="{%static 'style/header.css'%}">
+  <link rel="stylesheet" href="{%static 'style/content.css'%}">
+  <link rel="stylesheet" href="{%static 'style/general.css'%}">
+  <link rel="stylesheet" href="{%static 'style/hero.css'%}">
+  <link rel="stylesheet" href="{%static 'style/form.css'%}">
+  <link rel="stylesheet" href="{%static 'style/footer.css'%}">
+</head>
+
+<body>
+  <div class="nav-wrapper">
+
+    <nav>
+      <div class="nav-image">
+        wallet
+      </div>
+
+      <ul class="head-ul">
+        <li class="head-li"><a class="{%if request.path == '/'%} active {%endif%}" href=" {% url 'home' %}">HOME</a>
+        </li>
+
+        <li class="head-li"><a class="{%if request.path == '/about'%} active {%endif%}"
+            href="{% url 'about' %}">ABOUT</a>
+        </li>
+
+        <li class="head-li"><a class="{%if request.path == '/plans'%} active {%endif%}"
+            href="{% url 'plans' %}">PLANS</a>
+        </li>
+
+        <li class="head-li"><a class="{%if request.path == '/services'%} active {%endif%}"
+            href=" {% url 'services' %} ">SERVICES</a></li>
+      </ul>
+
+      <div class="btn-wrapper">
+        <button class="create-acc-btn"><a href="{%url 'create-account'%}">CREATE ACCOUNT</a></button>
+        <button class="login-btn"><a href="{%url 'login'%}">LOG IN</a></button>
+      </div>
+
+      <div class="hamburger">
+        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+      </div>
+      <ul class="menu">
+        <li class="head-li"><a class="{%if request.path == '/'%} active {%endif%}" href=" {% url 'home' %}">HOME</a>
+        </li>
+
+        <li class="head-li"><a class="{%if request.path == '/about'%} active {%endif%}"
+            href="{% url 'about' %}">ABOUT</a>
+        </li>
+
+        <li class="head-li"><a class="{%if request.path == '/plans'%} active {%endif%}"
+            href="{% url 'plans' %}">PLANS</a>
+        </li>
+
+        <li class="head-li"><a class="{%if request.path == '/services'%} active {%endif%}"
+            href=" {% url 'services' %} ">SERVICES</a></li>
+
+        <div class="btn-wrapperm">
+          <button class="create-acc-btn-menu"><a href="{%url 'create-account'%}">SIGN UP</a></button>
+
+          <button class="login-btn"><a href="{%url 'login'%}">LOG IN</a></button>
+
+        </div>
+      </ul>
+
+
+
+    </nav>
+    <div>
+
+
+      <script src="https://widgets.coingecko.com/gecko-coin-price-marquee-widget.js"></script>
+      <gecko-coin-price-marquee-widget locale="en" dark-mode="true" outlined="true"
+        coin-ids="bitcoin,ethereum,binancecoin,dogecoin,tesla-xstock,euro-coin"
+        initial-currency="usd"></gecko-coin-price-marquee-widget>
+
+    </div>
+
+  </div>
+
+
+
+  <main>
+    {% block content %}
+    {%endblock%}
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+
+      <div class="logo">
+        <h1>
+          LOGO
+        </h1>
+      </div>
+      <ul class="footer-link">
+        <li><a class=" links " href="{% url 'home' %}">Home</a></li>
+
+        <li><a class=" links " href="{% url 'about' %}">About</a></li>
+
+        <li><a class=" links" href="{% url 'plans' %}">Plans</a></li>
+
+        <li><a class=" links " href=" {% url 'services' %} ">Services</a></li>
+      </ul>
+
+      <div class="brands">
+
+      </div>
+
+      <div class="copyright">
+        <p>
+          &copy; 2026 wallet app. All Rights Reserved
+        </p>
+      </div>
+
+    </div>
+  </footer>
+  <script>
+
+    const hamburgerIcon = document.querySelector('.hamburger');
+    const menu = document.querySelector('.menu');
+
+    hamburgerIcon.addEventListener('click', () => {
+      // const currentDispaly = window.getComputedStyle(menu).getPropertyValue('display');// 
+
+      menu.classList.toggle('show')
+
+    });
+
+
+
+
+  </script>
+</body>
+
+</html>

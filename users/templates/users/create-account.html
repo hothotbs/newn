@@ -1,0 +1,72 @@
+{% extends 'homepage/base.html'%}
+{% load static%}
+
+{% block content %}
+<div class="form">
+  <div class="form-wrapper">
+    <div class="form-head">
+      <h1>
+        Create An Account
+      </h1>
+    </div>
+    {%if messages%}
+    {%for message in messages%}
+    <div class="message">
+
+      {{message}}
+    </div>
+    {%endfor%}
+    {%endif%}
+    <div class="fields-wrapper">
+      <div class="field-wrapper">
+
+        <form method="POST">
+          {%csrf_token%}
+
+          <div>
+            <input class="input-field" id="first-name" name="first-name" type="text" required>
+            <label class="field-name" for="first-name">First Name</label>
+          </div>
+
+          <div>
+            <input class="input-field" id="last-name" name="last-name" type="text" required>
+            <label class="field-name" for="last-name"> Last Name</label>
+          </div>
+
+          <div>
+            <input class="input-field" id="email" name="email" type="email" required>
+            <label class="field-name" for="email">Email</label>
+          </div>
+
+          <div>
+            <input autocomplete="new-password" class="input-field" id="username" name="username" type="text" required>
+            <label class="field-name" for="username">Username</label>
+          </div>
+
+          <div>
+            <input autocomplete="new-password" class="input-field" id="password" name="password" type="password"
+              required>
+            <label class="field-name" for="password">Password</label>
+          </div>
+
+          <div>
+            <input class="input-field" id="confirm-password" name="confirm-password" type="password" required>
+            <label class="field-name" for="confirm-password"> Confirm Password</label>
+          </div>
+
+          <button class="submit-btn" type="submit">
+            Create Account
+          </button>
+        </form>
+      </div>
+
+
+
+      <p class="existed-acct">
+        Already have an account <a href="{%url 'login'%}">Log in</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+{%endblock%}

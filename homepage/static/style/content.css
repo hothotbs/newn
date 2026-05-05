@@ -1,0 +1,195 @@
+.main-content {
+  display: flex;
+  justify-content: center;
+  padding: 0 40px;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.why-us {
+  margin-top: 30px;
+  padding-bottom: 50px;
+}
+
+.why-us-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.why-us-header {
+  width: 100%;
+  padding: 0 20px;
+  font-size: 60px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.why-us-header span {
+  color: #fcaf19;
+  font-size: 80px;
+}
+
+.why-us-sub-h {
+  text-align: center;
+  width: 80%;
+  padding: 0 20px;
+  font-weight: 600;
+}
+
+.why-us-content {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: white;
+  border-width: 1px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px black;
+  padding: 20px 10px;
+  transition: all 0.3;
+}
+
+.card:hover {
+  width: 93%;
+}
+
+.card-img {}
+
+.card-img img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-content {}
+
+.card-heading {
+  margin-bottom: 20px;
+  text-align: center;
+
+}
+
+.card-text {
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+.join-btn {
+  border-width: 0;
+}
+
+.join-btn a {
+  background-color: rgb(0, 0, 0);
+  padding: 15px 80px;
+  border-radius: 20px;
+  transition: background-color 0.2s;
+}
+
+.join-btn a:hover {
+  background-color: #fcaf10;
+}
+
+.card-btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-btn-wrapper a {
+  font-weight: 600;
+  font-size: small;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.about-us {
+  background-color: blue;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 50px;
+}
+
+.about-us-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 500px;
+  gap: 20px;
+  align-items: center;
+
+}
+
+.about-us-content {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 30px;
+}
+
+.about-us-heading {
+  text-align: center;
+  font-size: 70px;
+  margin-bottom: 40px;
+
+}
+
+.about-us-content h4 {
+  color: red;
+  margin-bottom: 20px;
+}
+
+.about-us-content p {
+  line-height: 25px;
+}
+
+.about-us-img {
+  background-image: url('/static/image/market-charts.jpg');
+  background-position: 70% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 350px;
+}
+
+.about-member {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+
+}
+
+.user-details {
+  background-color: #111041;
+  height: 250px;
+  width: 300px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 40px;
+  font-weight: 500;
+
+}
+
+.user-details h3 {
+  color: #fcaf19;
+  font-size: 30px;
+}
+
+.user-details span {
+  color: #ffffff;
+}

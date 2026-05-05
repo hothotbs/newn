@@ -1,0 +1,98 @@
+.hero-wrapper {
+  margin: auto;
+  position: relative;
+
+}
+
+.hero-img {
+  background-image: url("/static/image/hero.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  min-height: 550px;
+  overflow: hidden;
+}
+
+
+.hero-text-wrapper {
+  position: absolute;
+  width: 600px;
+  left: 80px;
+  top: 30px;
+}
+
+.hero-heading {
+  color: #dadada;
+  font-size: 90px;
+  font-weight: 600;
+}
+
+.hero-txt-span {
+  color: #fcaf19;
+}
+
+.hero-text {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.h-create-acc-btn {
+  padding: 15px 20px;
+  background-color: #fcaf10;
+  border-radius: 40px;
+
+  border-radius: 40px;
+  border-width: 2px;
+  border-color: #fcaf10;
+  transition: background-color 0.2s ease;
+
+}
+
+.h-btn-wrapper {
+  padding: 15px 20px;
+  margin-top: 40px;
+}
+
+.h-create-acc-btn:hover {
+  background-color: #fffffe;
+  border-color: #fffffe;
+}
+
+.h-login-btn {
+  background-color: #78777546;
+  padding: 11px 40px;
+  border-radius: 40px;
+  border-width: 2px;
+  border-color: #fffffe;
+  margin-left: 30px;
+  transition: background-color 0.2s;
+}
+
+
+.h-login-btn:hover {
+  background-color: #78777572;
+}
+
+.h-login-txt,
+.h-create-txt {
+  display: flex;
+  gap: 10px;
+  font-weight: 600;
+  font-size: small;
+  text-decoration: none;
+  align-items: center;
+}
+
+.h-login-txt {
+  color: rgb(253, 253, 253);
+
+}
+
+.h-create-txt {
+  color: rgb(0, 0, 0);
+
+}

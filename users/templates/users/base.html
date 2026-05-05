@@ -1,0 +1,85 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'style/base.css'%}">
+  <link rel="stylesheet" href="{% static 'style/dashboard.css'%}">
+  <link rel="stylesheet" href="{% static 'style/create-account.css'%}">
+  <link rel="stylesheet" href="{% static 'style/withdraw.css'%}">
+  <link rel="stylesheet" href="{% static 'style/edit-profile.css'%}">
+  <link rel="stylesheet" href="{% static 'style/create-acct.css'%}">
+
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="header-and-chart-wrapper">
+
+    <header class="header-wrapper">
+      <div class="username">
+        <p>{{user}}</p>
+      </div>
+      <div class="">
+        profile
+      </div>
+    </header>
+
+    <div>
+      <script src="https://widgets.coingecko.com/gecko-coin-price-marquee-widget.js"></script>
+      <gecko-coin-price-marquee-widget locale="en" dark-mode="true" outlined="true"
+        coin-ids="bitcoin,ethereum,binancecoin,dogecoin,tesla-xstock,euro-coin"
+        initial-currency="usd"></gecko-coin-price-marquee-widget>
+
+    </div>
+  </div>
+
+
+
+  <nav class="sidebar-wrapper">
+    <ul class="side-ul">
+
+      <div class="logo-wrapper">
+        <h1 class="logo">LOGO</h1>
+      </div>
+
+
+      <li class="dashboard-wrapper"> <a class="{% if request.path == '/users/dashboard'%} active{%endif%}"
+          href="{%url 'dashboard'%}"> <img class="dashboard-icon" src="{%static 'image/dashbord.png'%}">
+          Dashboard</a></li>
+
+      <li class="withdraw-wrapper"> <a class="{% if request.path == '/users/withdraw'%} active{%endif%}"
+          href="{%url 'withdraw'%}"> <img class="withdrawal-icon" src="{%static 'image/withdraw.png'%}">
+          Withdrawal</a></li>
+
+      <li class="depoit"> <a class="{% if request.path == '/users/deposit'%} active{%endif%}" href="{%url 'deposit'%}">
+          <img class="deposited-icon" src="{%static 'image/deposit.png'%}"> Deposit</a></li>
+
+
+      <li class="profile-wrapper"> <a class="{% if request.path == '/users/edit-profile'%} active{%endif%}"
+          href="{%url 'edit-profile'%}"> <img class="profile-icon" src="{%static 'image/profile.png'%}"> Edit
+          Profile</a></li>
+
+      <li class="logout-wrapper">
+
+
+        <a class="logout-btn" href="{%url 'logout'%}"> <img class="logout-icon" src="{%static 'image/logout.png'%}">
+          logout</a>
+
+      </li>
+
+    </ul>
+  </nav>
+
+  <main>
+    {%block content%}
+    {% endblock %}
+  </main>
+
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+{% extends "users/base.html" %}
+{% load static%}
+{% load humanize %}
+
+
+
+{%block content%}
+<div class="title">
+  <h1>
+    Make Deposit
+  </h1>
+</div>
+<div>
+
+  {%if messages%}
+  {%for message in messages%}
+  <div>
+    {{message}}
+  </div>
+
+  {%endfor%}
+
+  {%if form.amount.errors%}
+  {%endif%}
+  <div>
+    {{form.amount.errors}}
+  </div>
+  {%endif%}
+  <div>
+    {{deposit_details.name_of_coin}}:
+    {{deposit_details.wallet_address}}
+  </div>
+
+  <form class="withdraw-form" method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+
+    <div>
+
+      {{form.amount.label_tag}}
+      {{form.amount}}
+
+    </div>
+    <div class="deposit-field-wrapper">
+
+      {{form.image.label_tag}}
+      {{form.image}}
+
+    </div>
+
+    <button class="withdraw-btn" type="submit">
+      Deposit
+    </button>
+  </form>
+</div>
+
+<div class="history-heading">
+  <h2>
+    Deposit History
+  </h2>
+</div>
+<div class="history">
+
+  <div class="history-list">
+
+    {%if deposit_history%}
+    <table>
+      <tbody>
+
+        <tr>
+          <th>Amount Deposit</th>
+          <th>Status</th>
+        </tr>
+
+        {%for deposit in deposit_history %}
+        <tr class="depo-tr">
+          <td>
+            <div class="amount-withdraw">
+              <div class="withdraw-icon-wrapper">
+                <img class="deposit-icon" src="{% static 'image/deposit.png'%}">
+                <img class="down-left" src="{% static 'image/down-left.png'%}">
+              </div>
+              <div>
+                <p>${{deposit.amount|intcomma}}</p>
+                <span> {{deposit.created_on}}</span>
+              </div>
+            </div>
+
+          </td>
+          {%if deposit.status == "pending" %}
+          <td>
+            <p class="pending-withdraw">{{deposit.status}}</p>
+          </td>
+          {%elif deposit.status == 'approved' %}
+          <td>
+            <p class="approved-withdraw">{{deposit.status}}</p>
+          </td>
+          {%elif deposit.status == 'reject' %}
+          <td>
+            <p class="reject-withdraw">{{deposit.status}}</p>
+          </td>
+          {%endif%}
+
+        </tr>
+
+        {%endfor%}
+        <tr>
+          <th></th>
+          <th></th>
+        </tr>
+
+    </table>
+
+    </tbody>
+    {%endif%}
+
+
+
+  </div>
+</div>
+{% endblock %}
