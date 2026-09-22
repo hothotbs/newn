@@ -1,7 +1,16 @@
 {% extends 'homepage/base.html'%}
 {% load static%}
+{% block extra_css%}
+<title>
+  {{app_config.app_name}} Plans
+</title>
+<link rel="stylesheet" href="{% static 'styles/users/upgrade-plans.css' %}">
+{%endblock%}
 
 {% block content %}
+{% include 'includes/page-title.html' with path="plans" title="Investment Plan" %}
+{% include 'includes/plans.html' %}
+{% include 'includes/ready-to.html' %}
 
 
 {%endblock%}

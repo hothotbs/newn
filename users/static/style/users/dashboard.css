@@ -1,0 +1,88 @@
+.title h1 {
+  text-align: center;
+}
+
+.investment-wrapper {
+  display: flex;
+
+  flex-direction: column;
+  background-color: rgb(29, 156, 44);
+  border-radius: 5px;
+  padding: 10px;
+
+}
+
+.dash-label {
+  color: white;
+  font-weight: 600;
+}
+
+.invest {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+
+
+.acc-invest,
+.acc-profit,
+.acc-balance,
+.acc-total {
+  color: white;
+}
+
+.acc-name {
+  color: white;
+  background-color: rgb(250, 54, 51);
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.acc-level {
+  color: black;
+  background-color: rgb(231, 177, 43);
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.acc-total {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.acc-invest {
+
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.acc-profit {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.trading-view_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.trading-head {
+  background-color: rgb(50, 50, 255);
+  text-align: center;
+  padding: 10px 0;
+  color: white;
+}
+
+@media(max-width:1030px) {
+  .trading-view_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

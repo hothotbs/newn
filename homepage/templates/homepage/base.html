@@ -3,15 +3,48 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>wallet app</title>
+
+  <!-- twitter  url preview -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{app_config.app_name}}">
+  <meta name="twitter:description"
+    content="Expert wealth management tailored to your goals. We turn financial planning into lasting prosperity.">
+  <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'image/ai-robott.jpg' %}">
+
+  <!-- socail  media preview -->
+  <meta property="og:title" content="{{app_config.app_name}}">
+  <meta property="og:description"
+    content="Expert wealth management tailored to your goals. We turn financial planning into lasting prosperity.">
+  <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'image/ai-robott.jpg' %}">
+  <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}">
+  <meta property="og:type" content="website">
+
+
+  <!-- other CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+
+
+  <!-- my css -->
   <link rel="stylesheet" href="{%static 'style/header.css'%}">
   <link rel="stylesheet" href="{%static 'style/content.css'%}">
   <link rel="stylesheet" href="{%static 'style/general.css'%}">
   <link rel="stylesheet" href="{%static 'style/hero.css'%}">
   <link rel="stylesheet" href="{%static 'style/form.css'%}">
   <link rel="stylesheet" href="{%static 'style/footer.css'%}">
+  <link rel="stylesheet" href="{%static 'style/page-title.css'%}">
+
+  <!-- favicoon -->
+  <link rel="icon" href="{{app_config.logo.url}}">
+  {% block extra_css%}{% endblock %}
 </head>
 
 <body>
@@ -19,7 +52,9 @@
 
     <nav>
       <div class="nav-image">
-        wallet
+        <a href="{% url 'home' %}">
+          <img src="{{ app_config.logo.url }}" alt="logo">
+        </a>
       </div>
 
       <ul class="head-ul">
@@ -30,13 +65,15 @@
             href="{% url 'about' %}">ABOUT</a>
         </li>
 
-        <li class="head-li"><a class="{%if request.path == '/plans'%} active {%endif%}"
-            href="{% url 'plans' %}">PLANS</a>
+        <li class="head-li"><a class="{%if request.path == '/services'%} active {%endif%}"
+            href=" {% url 'services' %} ">SERVICES</a>
         </li>
 
-        <li class="head-li"><a class="{%if request.path == '/services'%} active {%endif%}"
-            href=" {% url 'services' %} ">SERVICES</a></li>
+        <li class="head-li"><a class="{%if request.path == '/faq'%} active {%endif%}" href="{% url 'faq' %}">FAQ</a>
+        </li>
+
       </ul>
+
 
       <div class="btn-wrapper">
         <button class="create-acc-btn"><a href="{%url 'create-account'%}">CREATE ACCOUNT</a></button>
@@ -54,8 +91,7 @@
             href="{% url 'about' %}">ABOUT</a>
         </li>
 
-        <li class="head-li"><a class="{%if request.path == '/plans'%} active {%endif%}"
-            href="{% url 'plans' %}">PLANS</a>
+        <li class="head-li"><a class="{%if request.path == '/faq'%} active {%endif%}" href="{% url 'faq' %}">FAQ</a>
         </li>
 
         <li class="head-li"><a class="{%if request.path == '/services'%} active {%endif%}"
@@ -84,7 +120,15 @@
 
   </div>
 
-
+  {%if messages%}
+  {%for message in messages%}
+  <div class="message {{message.tags}}">
+    <p>
+      {{message}}
+    </p>
+  </div>
+  {%endfor%}
+  {%endif%}
 
   <main>
     {% block content %}
@@ -94,28 +138,66 @@
   <footer>
     <div class="footer-wrapper">
 
-      <div class="logo">
-        <h1>
-          LOGO
-        </h1>
+      <div class="upper-footer">
+        <div class="footer-about-wrapper">
+          <div class="footer_logo">
+            <img src="{{ app_config.logo.url }}" alt="logo">
+          </div>
+          <p>
+            We're a technology driven investment platform committed to making smart, secure, and accessible investing
+            available to everyone. Combining market expertise with AI powered tools, we help our clients grow their
+            wealth with confidence and transparency.
+          </p>
+        </div>
+
+        <div class="quick-links">
+          <h3>
+            Quick Links
+          </h3>
+          <ul class="footer-link">
+            <li><a class=" links " href="{% url 'home' %}">Home</a></li>
+
+            <li><a class=" links " href="{% url 'about' %}">About</a></li>
+
+            <li><a class=" links" href="{% url 'faq' %}">FAQ</a></li>
+
+            <li><a class=" links " href=" {% url 'services' %} ">Services</a></li>
+          </ul>
+
+        </div>
+
+
+        <div class="footer-contact">
+          <h3>
+            Contact
+          </h3>
+          <ul class="contact-wrapper">
+            <li>
+              <div class="contact-icon footer-email"></div>
+              <a href="mailto:support@wallet.com">support@bremondmine.com</a>
+            </li>
+
+            <li>
+              <div class="contact-icon footer-location"></div>
+              <p>333 SE 2nd Avenue. Miami, FL 33131, United States</p>
+            </li>
+
+            <li>
+              <div class="contact-icon footer-support"></div>
+              <p>
+                you can also reach out to us with the live chat at the bottom right coner for immidiate response
+              </p>
+            </li>
+
+          </ul>
+        </div>
+
       </div>
-      <ul class="footer-link">
-        <li><a class=" links " href="{% url 'home' %}">Home</a></li>
 
-        <li><a class=" links " href="{% url 'about' %}">About</a></li>
-
-        <li><a class=" links" href="{% url 'plans' %}">Plans</a></li>
-
-        <li><a class=" links " href=" {% url 'services' %} ">Services</a></li>
-      </ul>
-
-      <div class="brands">
-
-      </div>
 
       <div class="copyright">
         <p>
-          &copy; 2026 wallet app. All Rights Reserved
+          &copy; 2026 {{app_config.app_name}}. All Rights Reserved
         </p>
       </div>
 
@@ -130,6 +212,36 @@
       // const currentDispaly = window.getComputedStyle(menu).getPropertyValue('display');// 
 
       menu.classList.toggle('show')
+
+    });
+
+    const faqHeads = document.querySelectorAll(".faq-head-wrapper");
+    const faqHighlights = document.querySelectorAll('.faq-highlight');
+    const openfaq = document.querySelectorAll('.open-faq')
+
+
+
+    faqHeads.forEach((faqhead, index) => {
+
+      faqhead.addEventListener('click', () => {
+        const displayHighlight = faqHighlights[index];
+        displayHighlight.classList.toggle('show-faq')
+        if (displayHighlight.classList.contains('show-faq')) {
+          openfaq[index].classList.add('rotate-arrow')
+        } else {
+          openfaq[index].classList.remove('rotate-arrow')
+
+        }
+
+        faqHeads.forEach((faqHighlight, i) => {
+          if (index !== i) {
+            faqHighlights[i].classList.remove('show-faq')
+            openfaq[i].classList.remove('rotate-arrow')
+
+          }
+        });
+
+      })
 
     });
 

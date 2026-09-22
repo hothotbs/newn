@@ -1,0 +1,22 @@
+.page-title {
+  background: linear-gradient(135deg, #0b0c26 0%, #2b3990 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  color: rgb(225, 225, 225);
+}
+
+.page-title h1 {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.page-title p {
+  font-size: 30px;
+}
+
+.page-title p span {
+  color: #c0a013;
+}

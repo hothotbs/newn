@@ -1,5 +1,10 @@
 {% extends 'homepage/base.html'%}
 {% load static%}
+{% block extra_css%}
+<title>
+  {{app_config.app_name}} Homepage
+</title>
+{%endblock%}
 
 {% block content %}
 <!-- HERO SECTION -->
@@ -26,157 +31,485 @@
 </div>
 <!-- End of hero -->
 
+<!--  -->
+<div class="marquee-wrapper">
+  <div class="marque-header">
+    <h4>
+      Patnership with...
+    </h4>
+  </div>
+  <div class="all-marquee">
+    <div class="marquee-content">
+      <h1>
+        Binance
+      </h1>
+      <h1>
+        Fidelity
+      </h1>
+      <h1>
+        Coinbase
+      </h1>
+      <h1>
+        BlackRock
+      </h1>
+      <h1>
+        Crypto.com
+      </h1>
+      <h1>
+        Vanguard
+      </h1>
+      <h1>
+        Bybit
+      </h1>
+      <h1>
+        kraken
+      </h1>
+      <h1>
+        Binance
+      </h1>
+      <h1>
+        Fidelity
+      </h1>
+      <h1>
+        Coinbase
+      </h1>
+      <h1>
+        BlackRock
+      </h1>
+      <h1>
+        Crypto.com
+      </h1>
+      <h1>
+        Vanguard
+      </h1>
+      <h1>
+        Bybit
+      </h1>
+      <h1>
+        kraken
+      </h1>
+    </div>
+    <div class="marquee-content">
+      <h1>
+        Binance
+      </h1>
+      <h1>
+        Fidelity
+      </h1>
+      <h1>
+        Coinbase
+      </h1>
+      <h1>
+        BlackRock
+      </h1>
+      <h1>
+        Crypto.com
+      </h1>
+      <h1>
+        Vanguard
+      </h1>
+      <h1>
+        Bybit
+      </h1>
+      <h1>
+        kraken
+      </h1>
+      <h1>
+        Binance
+      </h1>
+      <h1>
+        Fidelity
+      </h1>
+      <h1>
+        Coinbase
+      </h1>
+      <h1>
+        BlackRock
+      </h1>
+      <h1>
+        Crypto.com
+      </h1>
+      <h1>
+        Vanguard
+      </h1>
+      <h1>
+        Bybit
+      </h1>
+      <h1>
+        kraken
+      </h1>
+    </div>
+
+  </div>
+</div>
+
+<!-- list of achievment -->
+<div class="list-achievment-wrapper">
+
+  <div class="achievment">
+    <div class="achievment-img ">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#fcaf10" class="bi bi-people-fill"
+        viewBox="0 0 16 16">
+        <path
+          d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+      </svg>
+    </div>
+    <h1>
+      2M+
+    </h1>
+    <p>
+      Active Investors
+    </p>
+  </div>
+
+  <div class="achievment">
+    <div class="achievment-img ">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#fcaf10" class="bi bi-bank"
+        viewBox="0 0 16 16">
+        <path
+          d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.5.5 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89zM3.777 3h8.447L8 1zM2 6v7h1V6zm2 0v7h2.5V6zm3.5 0v7h1V6zm2 0v7H12V6zM13 6v7h1V6zm2-1V4H1v1zm-.39 9H1.39l-.25 1h13.72z" />
+      </svg>
+    </div>
+    <h1>
+      $30B+
+    </h1>
+    <p>
+      Total Deposit
+    </p>
+  </div>
+
+  <div class="achievment">
+    <div class="achievment-img ">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#fcaf10" class="bi bi-cash-coin"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8m5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0" />
+        <path
+          d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195z" />
+        <path
+          d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083q.088-.517.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1z" />
+        <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 6 6 0 0 1 3.13-1.567" />
+      </svg>
+    </div>
+    <h1>
+      $700K
+    </h1>
+    <p>
+      Avg volume
+    </p>
+  </div>
+
+  <div class="achievment">
+    <div class="achievment-img">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#fcaf10" class="bi bi-hourglass-split"
+        viewBox="0 0 16 16">
+        <path
+          d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48zm1 0v3.17c2.134.181 3 1.48 3 1.48a3.5 3.5 0 0 0-1.989-3.158C8.978 9.586 8.5 9.052 8.5 8.351z" />
+      </svg>
+    </div>
+    <h1>
+      24/7
+    </h1>
+    <p>
+      Withdrawal Time
+    </p>
+  </div>
+</div>
+
 <!-- body after hero  -->
 <div class="main-content">
 
   <!-- why us section -->
-  <div class="why-us">
-    <div class="why-us-wrapper">
-      <h1 class="why-us-header">
-        Why Choose Us <span>?</span>
-      </h1>
-      <h4 class="why-us-sub-h">
-        For Investors Seeking, Growth,Tranparecy,Flexibliy And Security
-      </h4>
-      <div class="why-us-content">
-        <div class="card">
-          <div class="card-img">
-            <img src="{%static 'image/WhatsAp.jpeg'%}" alt="">
-          </div>
-          <div class="card-content">
-            <h3 class="card-heading">
-              Back By Security And Exchange Commision
-            </h3>
-            <p class="card-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti earum autem labore esse cupiditate dolor
-              molestias voluptatum corporis odit repellat accusantium sint, tenetur rerum, voluptatem accusamus culpa
-              veniam impedit veritatis.
-            </p>
-            <div class="card-btn-wrapper">
-              <button class="join-btn"><a href="{%url 'create-account'%}">Join</a></button>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-img">
-            <img src="{%static 'image/WhatsAp.jpeg'%}" alt="">
-          </div>
-          <div class="card-content">
-            <h3 class="card-heading">
-              Support Instant Withdrawal
-            </h3>
-            <p class="card-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti earum autem labore esse cupiditate dolor
-              molestias voluptatum corporis odit repellat accusantium sint, tenetur rerum, voluptatem accusamus culpa
-              veniam impedit veritatis.
-            </p>
-            <div class="card-btn-wrapper">
-              <button class="join-btn"><a href="{%url 'create-account'%}">Join</a></button>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-img">
-            <img src="{%static 'image/WhatsAp.jpeg'%}" alt="">
-          </div>
-          <div class="card-content">
-            <h3 class="card-heading">
-              Professioanl Team
-            </h3>
-            <p class="card-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti earum autem labore esse cupiditate dolor
-              molestias voluptatum corporis odit repellat accusantium sint, tenetur rerum, voluptatem accusamus culpa
-              veniam impedit veritatis.
-            </p>
-            <div class="card-btn-wrapper">
-              <button class="join-btn"><a href="{%url 'create-account'%}">Join</a></button>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-img">
-            <img src="{%static 'image/WhatsAp.jpeg'%}" alt="">
-          </div>
-          <div class="card-content">
-            <h3 class="card-heading">
-              Customer Satisfaction
-            </h3>
-            <p class="card-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti earum autem labore esse cupiditate dolor
-              molestias voluptatum corporis odit repellat accusantium sint, tenetur rerum, voluptatem accusamus culpa
-              veniam impedit veritatis.
-            </p>
-            <div class="card-btn-wrapper">
-              <button class="join-btn"><a href="{%url 'create-account'%}">Join</a></button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
+  {% include 'includes/whyus.html' %}
   <!-- end of why section -->
 
+
   <!-- About us section -->
-  <div class="about-us">
-    <div class="about-us-wrapper">
+  {% include 'includes/about.html' %}
 
-      <div class="about-us-content">
-        <h2 class="about-us-heading">
-          About wallet
-        </h2>
-        <h4>
-          Lorem ipsum dolor sit jdgd jdghdid idhdid jidghdd ikdhi kdjd
-        </h4>
+</div>
+
+
+
+<!-- services -->
+{% include 'includes/service.html' %}
+
+<!-- smart bot trade -->
+<div class="robot_higlight">
+  <div class="robot_higlight">
+    <img src="{% static 'image/ai-robott.jpg' %}" />
+    <div class="robot-text-wrapper">
+      <h1 class="robot-heading">
+        Smarter Trading Starts Here <strong> !</strong>
+      </h1>
+      <p class="py-6">
+        Our AI-powered trading technology analyzes market data around the clock, identifying opportunities and executing
+        trades with speed and precision so you can grow your portfolio without needing to watch the markets yourself.
+      </p>
+      <div class="bot-functions">
+        <ul class="bot-ul">
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+
+            <span>
+              Real-time market analysis
+            </span>
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+
+            <span>
+              Lightning-fast trade execution
+            </span>
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+
+            <span>
+              Adaptive algorithms that learn from market trends
+            </span>
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+
+            <span>
+              Data backed trading strategies
+            </span>
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+
+            <span>
+              24/7 monitoring, zero guesswork
+            </span>
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+
+            <span>
+              Automated trade execution
+            </span>
+          </li>
+        </ul>
+      </div>
+      <a href="{% url 'home' %}" class="robot-btn">Get Started</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- what customer are saying -->
+<div class="review-wrapper">
+  <div class="blue-bg">
+    <div class="quotation-wrapper">
+      <img src="{% static 'image/quotation.png' %}">
+    </div>
+    <div class="customer-say-wrapper">
+      <h2>
+        What Our Customer Say
+      </h2>
+      <p>
+        Real Stories, Real Results. Hear From Investors Who Trust Us With Their Financial Future
+      </p>
+    </div>
+  </div>
+
+  <div class="customer-wrapper-all">
+    <div class="customer-wrapper customer-wrapper-woman">
+      <div class="customer-content">
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolore vero voluptatibus maxime iusto, beatae
-          repellendus cumque corrupti dolorem adipisci voluptate delectus fuga nobis deserunt quia blanditiis.
-          Voluptates, ratione velit.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolore vero voluptatibus maxime iusto, beatae
-          repellendus cumque corrupti dolorem adipisci voluptate delectus fuga nobis deserunt quia blanditiis.
-          Voluptates, ratione velit.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolore vero voluptatibus maxime iusto, beatae
-          repellendus cumque corrupti dolorem adipisci voluptate delectus fuga nobis deserunt quia blanditiis.
-          Voluptates, ratione velit.
+          I was hesitant about online investing at first, but the platform's transparency and support team made all the
+          difference. I finally feel in control of my financial future.
         </p>
-      </div>
-      <div class="about-us-img">
-
-      </div>
-    </div>
-
-    <div class="about-member">
-      <div class="user-number user-details">
-        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF">
-          <path
-            d="M234-336q-29.29 0-50.14-21.21-20.86-21.21-20.86-51T183.86-459q20.85-21 50.14-21 30.11 0 51.56 21.21 21.44 21.21 21.44 51T285.56-357q-21.45 21-51.56 21Zm491 0q-30.11 0-51.56-21.21-21.44-21.21-21.44-51T673.44-459q21.45-21 51.56-21 29.29 0 50.14 21.21 20.86 21.21 20.86 51T775.14-357q-20.85 21-50.14 21Zm-245-42q-38 0-65-27t-27-65q0-38 27-65t65-27q38 0 65 27t27 65q0 38-27 65t-65 27ZM288-121q14-66 67.3-110.5T480-276q71.4 0 124.7 44.5T672-121H288Zm-208 0q0-65 45.24-110T234-276q23 0 44.5 6t39.5 18q-27 25.93-45 59.47Q255-159 248-121H80Zm632 0q-7-38-25-71.53-18-33.54-45-59.47 18-11 39-17.5t44-6.5q63.94 0 109.47 45T880-121H712ZM76-500l-36-47 440-333 177 134v-96h102v173.41L920-547l-36 47-404-304L76-500Z" />
-        </svg>
-        <h3>450k <span>+</span></h3>
-        <p>Members</p>
-      </div>
-      <div class="transactions user-details">
-        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF">
-          <path
-            d="M212-241v-339h60v339h-60Zm242 0v-339h60v339h-60ZM80-121v-60h800v60H80Zm608-120v-339h60v339h-60ZM80-640v-53l400-228 400 228v53H80Zm134-60h532-532Zm0 0h532L480-852 214-700Z" />
-        </svg>
-        <h3>$800B <span>+</span></h3>
-        <p>Transactions</p>
-      </div>
-      <div class="payout user-details">
-        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF">
-          <path
-            d="M479.76-530Q438-530 409-559.24q-29-29.23-29-71Q380-672 409.24-701q29.23-29 71-29Q522-730 551-700.76q29 29.23 29 71Q580-588 550.76-559q-29.23 29-71 29ZM180-380q-24.75 0-42.37-17.63Q120-415.25 120-440v-380q0-24.75 17.63-42.38Q155.25-880 180-880h600q24.75 0 42.38 17.62Q840-844.75 840-820v380q0 24.75-17.62 42.37Q804.75-380 780-380H180Zm100-60h400q0-42 29-71t71-29v-180q-42 0-71-29t-29-71H280q0 42-29 71t-71 29v180q42 0 71 29t29 71Zm-100 0v-380 380ZM480-80l126-126-42-42-54 54v-126h-60v126l-54-54-42 42L480-80Z" />
-        </svg>
-        <h3>$500B <span>+</span></h3>
-        <p>Payout</p>
-
+        <div class="name-stars-wrapper">
+          <p>
+            Mark Gabriel
+          </p>
+          <div class="stars-wrapper"></div>
+        </div>
       </div>
 
     </div>
 
+    <div class="customer-wrapper customer-wrapper-man">
+      <div class="customer-content ">
+        <p>
+          I appreciate how transparent everything is no hidden fees, no confusing terms. It's refreshing to work with a
+          platform that actually explains what's happening with my investments.
+        </p>
+        <div class="name-stars-wrapper">
+          <p>
+            Emily Bolton
+          </p>
+          <div class="stars-wrapper"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="more-customers">
+
+    <div class="customer-wrapper tony">
+      <div class="customer-content">
+        <p>
+          Customer support answered my questions fast and didn't try to oversell me on anything. That
+          straightforwardness earned my trust early on.
+        </p>
+        <div class="name-stars-wrapper">
+          <p>
+            Tony Bennett
+          </p>
+          <div class="stars-wrapper"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="customer-wrapper helenalopes">
+      <div class="customer-content">
+        <p>
+          What I like most is the flexibility. I can choose my own trading type or let the bot decide, depending on how
+          hands-on I want to be that week
+        </p>
+        <div class="name-stars-wrapper">
+          <p>
+            Helena Robert
+          </p>
+          <div class="stars-wrapper"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="customer-wrapper polly">
+      <div class="customer-content">
+        <p>
+          The AI bot has genuinely simplified my investing routine. I don't have time to watch charts all day, so having
+          something that handles execution for me has been a game changer.
+        </p>
+        <div class="name-stars-wrapper">
+          <p>
+            Polly Torres
+          </p>
+          <div class="stars-wrapper"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="customer-wrapper nilov">
+      <div class="customer-content">
+        <p>
+          Withdrawals have always been quick for me, which honestly is one of the biggest things I look for in a
+          platform like this.
+        </p>
+        <div class="name-stars-wrapper">
+          <p>
+            Jane Woods
+          </p>
+          <div class="stars-wrapper"></div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
 </div>
+
+
+
+<!--  How To Get Started -->
+<div class="big-big">
+  <div class="get-started-wrapper">
+    <h1 style="color: white;">
+      How To Get Started
+    </h1>
+    <div class="list-ofstarts">
+
+      <div class="start-colum">
+
+        <div class="first-start">
+          <div class="num-img">
+            <h1>1</h1>
+          </div>
+          <div class="how-to-start">
+            <p class="create-acc-txt">
+              create an Account
+            </p>
+            <p>
+              Sign up in minutes with just a few basic details. Our quick verification process gets you set up and ready
+              to explore the platform without unnecessary delays.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="first-start">
+          <div class="num-img">
+            <h1>2</h1>
+          </div>
+          <div class="how-to-start">
+            <p class="create-acc-txt">
+              Make Deposit
+            </p>
+            <p>
+              Fund your account securely using your preferred payment method. Choose an amount that fits your budget and
+              investment goals you're always in control of how much you invest.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="start-colum">
+
+        <div class="first-start">
+          <div class="num-img">
+            <h1>3</h1>
+          </div>
+          <div class="how-to-start">
+            <p class="create-acc-txt">
+              Select Trade Type </p>
+            <p>
+              Select a trading type that aligns with your investment objectives. If you're unsure which option is right
+              for you, our bot will automatically determine the optimal strategy on your behalf.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="first-start">
+          <div class="num-img">
+            <h1>4</h1>
+          </div>
+          <div class="how-to-start">
+            <p class="create-acc-txt">
+              Initailize Bot
+            </p>
+            <p>
+              After completing the steps above, our AI Bot will takes over and automatically execute trades on your
+              behalf
+              based on the selected strategy, to work the market in real time."
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- FAQ  -->
+  {% include 'includes/faq.html' %}
+
+
+  <!-- ready to start -->
+  {% include 'includes/ready-to.html' %}
+
+
+</div>
+
 
 
 

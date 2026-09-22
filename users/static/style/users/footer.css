@@ -1,0 +1,32 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-btn {
+  display: none;
+}
+
+.upper-footer-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.support-coin-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-wrapper img {
+  width: 100px;
+}
+
+.lower-footer-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

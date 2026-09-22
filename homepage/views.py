@@ -9,9 +9,9 @@ def home_view(request):
     return render(request, 'homepage/home.html', context)
 
 
-def plans_view(request):
+def faq_view(request):
     context = {}
-    return render(request, 'homepage/plans.html', context)
+    return render(request, 'homepage/faq.html', context)
 
 
 def about_view(request):

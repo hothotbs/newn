@@ -1,11 +1,47 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+
 }
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Google Sans", sans-serif;
   color: black;
+  font-size: 1rem;
+}
 
+@media(max-width:740px) {
+  body {
+    font-size: .9rem !important;
+  }
+}
+
+.message {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 20px;
+
+}
+
+.message.success {
+  background-color: #d4edda;
+}
+
+.success p {
+  color: #155724;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.message.error {
+  background-color: #f59ca4;
+}
+
+.error p {
+  font-size: 1rem;
+  text-align: center;
+  color: #721c24;
 }

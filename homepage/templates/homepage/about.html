@@ -1,7 +1,17 @@
 {% extends 'homepage/base.html'%}
 {% load static%}
 
+{% block extra_css%}
+<title>
+  About {{app_config.app_name}}
+</title>
+{%endblock%}
+
 {% block content %}
 
+
+{% include 'includes/page-title.html' with path="About" title="About Us" %}
+{% include 'includes/about.html' %}
+{% include 'includes/ready-to.html' %}
 
 {%endblock%}

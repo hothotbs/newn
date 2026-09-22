@@ -21,9 +21,12 @@ nav {
 
 .nav-image {
   width: 150px;
-  margin-left: 20px;
   font-size: large;
   font-weight: bold;
+}
+
+.nav-image img {
+  width: 100px;
 }
 
 .nav-links {
@@ -126,7 +129,6 @@ ul {
 .head-li a {
   text-decoration: none;
   color: black;
-  font-size: small;
   font-weight: 500;
   overflow: hidden;
   display: block;
@@ -197,7 +199,6 @@ ul {
   display: flex;
   gap: 10px;
   font-weight: 600;
-  font-size: small;
   text-decoration: none;
   color: rgb(255, 255, 255);
   align-items: center;

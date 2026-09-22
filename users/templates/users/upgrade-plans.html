@@ -1,0 +1,165 @@
+{% extends "users/base.html" %}
+{% load static%}
+{% load humanize %}
+
+{% block extra_css%}
+<title>
+  Upgrade Plans
+</title>
+{%endblock%}
+
+{%block content%}
+
+<div class="tier-list">
+
+  <div class="tier-row">
+    <div class="tier-card">
+      <div class="tier-name">Professional</div>
+      <p class="tier-tagline">For investors building disciplined habits and a clear view of their portfolio.</p>
+      <ul class="advantages">
+        <li class="advantage"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>Real-time market data and portfolio tracking</li>
+        <li class="advantage"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>Standard risk assessment reports</li>
+        <li class="advantage"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>Email support, 48-hour response</li>
+      </ul>
+      <a href="{%  url 'upgrade-plans' %}" class="upgrade-btn">Upgrade</a>
+    </div>
+
+    <div class="tier-card">
+      <div class="tier-name">Premium</div>
+      <p class="tier-tagline">For investors who want sharper analysis and a guiding hand on strategy.</p>
+      <ul class="advantages">
+        <li class="advantage"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>Real-time market data and portfolio tracking</li>
+        <li class="advantage"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>Standard risk assessment reports</li>
+        <li class="advantage"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>Email support, 48-hour response</li>
+        <li class="advantage new"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg><span><span class="new-tag">New</span>Advanced charting and technical analysis tools</span></li>
+        <li class="advantage new"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg><span><span class="new-tag">New</span>Quarterly strategy session with an advisor</span></li>
+      </ul>
+      <a href="{%  url 'upgrade-plans' %}" class="upgrade-btn">Upgrade</a>
+    </div>
+
+  </div>
+
+  <div class="tier-row">
+
+    <div class="tier-card">
+      <div class="tier-name">Platinum</div>
+      <p class="tier-tagline">For investors scaling meaningful capital and ready for a personal advisor.</p>
+      <ul class="advantages">
+        <li class="advantage"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>Real-time market data and portfolio tracking</li>
+        <li class="advantage"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>Standard risk assessment reports</li>
+        <li class="advantage"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>Email support, 48-hour response</li>
+        <li class="advantage"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>Advanced charting and technical analysis tools</li>
+        <li class="advantage"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>Quarterly strategy session with an advisor</li>
+        <li class="advantage new"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg><span><span class="new-tag">New</span>Dedicated personal advisor</span></li>
+        <li class="advantage new"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg><span><span class="new-tag">New</span>Access to alternative assets — private equity, REITs, hedge
+            funds</span></li>
+        <li class="advantage new"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg><span><span class="new-tag">New</span>Tax-efficient portfolio structuring</span></li>
+      </ul>
+      <a href="{% url 'upgrade-plans'  %}" class="upgrade-btn">Upgrade</a>
+    </div>
+
+    <div class="tier-card">
+      <div class="tier-name">Ultimate</div>
+      <p class="tier-tagline">White-glove wealth management for investors at the top tier.</p>
+      <ul class="advantages">
+        <li class="advantage"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>Real-time market data and portfolio tracking</li>
+        <li class="advantage"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>Standard risk assessment reports</li>
+        <li class="advantage"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>Email support, 48-hour response</li>
+        <li class="advantage"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>Advanced charting and technical analysis tools</li>
+        <li class="advantage"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>Quarterly strategy session with an advisor</li>
+        <li class="advantage"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>Dedicated personal advisor</li>
+        <li class="advantage"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>Access to alternative assets — private equity, REITs, hedge funds</li>
+        <li class="advantage"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>Tax-efficient portfolio structuring</li>
+        <li class="advantage new"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg><span><span class="new-tag">New</span>Bespoke wealth and estate planning</span></li>
+        <li class="advantage new"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg><span><span class="new-tag">New</span>Early access to pre-IPO and institutional-grade deals</span>
+        </li>
+        <li class="advantage new"><svg class="mark" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10.5L8 14.5L16 5.5" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg><span><span class="new-tag">New</span>24/7 dedicated concierge line</span></li>
+      </ul>
+      <a href="{%  url 'upgrade-plans' %}" class="upgrade-btn">Upgrade</a>
+    </div>
+  </div>
+
+
+</div>
+{% endblock %}

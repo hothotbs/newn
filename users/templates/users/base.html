@@ -6,14 +6,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'style/base.css'%}">
-  <link rel="stylesheet" href="{% static 'style/dashboard.css'%}">
-  <link rel="stylesheet" href="{% static 'style/create-account.css'%}">
-  <link rel="stylesheet" href="{% static 'style/withdraw.css'%}">
-  <link rel="stylesheet" href="{% static 'style/edit-profile.css'%}">
-  <link rel="stylesheet" href="{% static 'style/create-acct.css'%}">
 
-  <title>Document</title>
+  <!-- twitter  url preview -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{app_config.app_name}}">
+  <meta name="twitter:description"
+    content="Expert wealth management tailored to your goals. We turn financial planning into lasting prosperity.">
+  <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'image/hero.png' %}">
+
+  <!-- socail  media preview -->
+  <meta property="og:title" content="{{app_config.app_name}}">
+  <meta property="og:description"
+    content="Expert wealth management tailored to your goals. We turn financial planning into lasting prosperity.">
+  <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'image/hero.png' %}">
+  <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}">
+  <meta property="og:type" content="website">
+
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- my css -->
+  <link rel="stylesheet" href="{% static 'style/users/base.css'%}">
+  <link rel="stylesheet" href="{% static 'style/users/dashboard.css'%}">
+  <link rel="stylesheet" href="{% static 'style/users/withdraw.css'%}">
+  <link rel="stylesheet" href="{% static 'style/users/edit-profile.css'%}">
+  <link rel="stylesheet" href="{% static 'style/users/upgrade-plans.css' %}">
+  <link rel="stylesheet" href="{% static 'style/users/footer.css' %}">
+
+  <!-- Option 1: Include in HTML -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+  <!-- favicoon -->
+  <link rel="icon" href="{{app_config.logo.url}}">
+  {% block extra_css%}{% endblock %}
+
+
 </head>
 
 <body>
@@ -21,12 +52,22 @@
   <div class="header-and-chart-wrapper">
 
     <header class="header-wrapper">
-      <div class="username">
-        <p>{{user}}</p>
+      <div class="hamburger-and-welcome">
+
+        <div class="hamburger">
+          <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+        </div>
       </div>
-      <div class="">
-        profile
-      </div>
+
+      <a href="{%url 'edit-profile'%}">
+        <div class="user-profile-wrapper">
+          <h4>
+            {{request.user.full_name}}
+          </h4>
+          <div class="user-profile">
+          </div>
+        </div>
+      </a>
     </header>
 
     <div>
@@ -38,48 +79,181 @@
     </div>
   </div>
 
-
-
   <nav class="sidebar-wrapper">
     <ul class="side-ul">
-
       <div class="logo-wrapper">
-        <h1 class="logo">LOGO</h1>
+        <span class="close-sidebar">
+          <i class="bi bi-x"></i>
+        </span>
+        <img src="{{app_config.logo.url}}" alt="logo">
       </div>
 
+      <li class="dashboard-wrapper">
+        <a class="{% if request.path == '/users/dashboard'%} actives{%endif%}" href="{%url 'dashboard'%}">
+          <i class="bi bi-ui-checks-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
 
-      <li class="dashboard-wrapper"> <a class="{% if request.path == '/users/dashboard'%} active{%endif%}"
-          href="{%url 'dashboard'%}"> <img class="dashboard-icon" src="{%static 'image/dashbord.png'%}">
-          Dashboard</a></li>
+      <li class="dashboard-wrapper">
+        <a class="{% if request.path == '/users/upgrade-plans'%} actives{%endif%}" href="{%url 'upgrade-plans'%}">
+          <i class="bi bi-slack"></i>
+          <span>plans</span>
+        </a>
+      </li>
 
-      <li class="withdraw-wrapper"> <a class="{% if request.path == '/users/withdraw'%} active{%endif%}"
-          href="{%url 'withdraw'%}"> <img class="withdrawal-icon" src="{%static 'image/withdraw.png'%}">
-          Withdrawal</a></li>
+      <li class="withdraw-wrapper">
+        <a class="{% if request.path == '/users/withdraw' or request.path == '/users/withdrawal-password' %} actives{%endif%}"
+          href="{%url 'withdraw'%}">
+          <i class="bi bi-arrow-up-right-square-fill"></i>
+          <span>
+            Withdrawal
+          </span>
+        </a>
+      </li>
 
-      <li class="depoit"> <a class="{% if request.path == '/users/deposit'%} active{%endif%}" href="{%url 'deposit'%}">
-          <img class="deposited-icon" src="{%static 'image/deposit.png'%}"> Deposit</a></li>
+      <li class="depoit">
+        <a class="{% if request.path == '/users/deposit' or  request.path == '/users/deposit-process1' %} actives{%endif%}"
+          href="{%url 'deposit-process1'%}">
+          <i class="bi bi-arrow-down-left-square-fill"></i>
+          <span>
+            Deposit
+          </span>
+        </a>
+      </li>
+
+      <li class="history-side_bar">
+        <div
+          class="history-head-wrapper {% if request.path == '/users/withdrawal-history' or request.path == '/users/deposit-history' %} actives {%endif%}">
+          <i class="bi bi-cash-stack"></i> <span>
+            Transaction History
+          </span>
+          <span class="show-history">
+            <i class="bi bi-caret-right-fill"></i></span>
+        </div>
+
+        <div class="history_list-wrapper hide-list">
+          <a class=" {% if request.path == '/users/deposit-history' %} active {%endif%}"
+            href="{%url 'deposit-history'%}">
+
+            <i class="bi bi-bookmark-plus-fill"></i>
+            Deposit History</a>
+          <a class=" {% if request.path == '/users/withdrawal-history' %} active {%endif%}" href="withdrawal-history">
+            <i class="bi bi-bookmark-dash-fill"></i>
+            Withdrawal History</a>
+        </div>
+
+      </li>
+
+      <li class="profile-wrapper">
+        <a class="{% if request.path == '/users/bind-wallet'%} actives{%endif%}" href="{%url 'bind_wallet'%}">
+          <i class="bi bi-link-45deg">
+          </i>
+          <span>Bind
+            Wallet</span>
+        </a>
+      </li>
 
 
-      <li class="profile-wrapper"> <a class="{% if request.path == '/users/edit-profile'%} active{%endif%}"
-          href="{%url 'edit-profile'%}"> <img class="profile-icon" src="{%static 'image/profile.png'%}"> Edit
-          Profile</a></li>
+      <li class="profile-wrapper">
+        <a class="{% if request.path == '/users/reset-password/'%} actives{%endif%}" href="{%url 'reset-password'%}">
+          <i class="bi bi-key-fill"></i>
+          <span>Change
+            Password</span>
+        </a>
+
+      </li>
+
+
 
       <li class="logout-wrapper">
-
-
-        <a class="logout-btn" href="{%url 'logout'%}"> <img class="logout-icon" src="{%static 'image/logout.png'%}">
-          logout</a>
-
+        <a class="logout-btn" href="{%url 'logout'%}">
+          <i class="bi bi-box-arrow-right"></i>
+          <span>
+            logout
+          </span>
+        </a>
       </li>
 
     </ul>
   </nav>
 
+  <div class="title">
+    <h3>
+      {% block tittle %}
+      {%endblock%}
+
+    </h3>
+  </div>
+
+  {%if messages%}
+  {%for message in messages%}
+  <div class="message {{message.tags}}">
+    <strong>
+      <p>
+        {{message}}
+      </p>
+    </strong>
+  </div>
+  {%endfor%}
+  {%endif%}
+
   <main>
     {%block content%}
     {% endblock %}
   </main>
+  <footer class="footer">
+    <div>
+      <h1>
+        Supported Coin
+      </h1>
+    </div>
+    <div class="upper-footer-wrapper">
 
+      <div class="support-coin-wrapper">
+        <div class="image-wrapper">
+          <img class="btc-img" src="{%  static 'image/bitcoin.png'  %}">
+        </div>
+        <span>
+          Bitcoin
+        </span>
+      </div>
+
+      <div class="support-coin-wrapper">
+        <div class="image-wrapper">
+          <img class="eth-img" src="{%  static 'image/eth.png'  %}">
+        </div>
+        <span>
+          Ethereum </span>
+      </div>
+
+      <div class="support-coin-wrapper">
+        <div class="image-wrapper">
+          <img class="doge-img" src="{%  static 'image/doge.png'  %}">
+        </div>
+        <span>
+          Dogecoin </span>
+      </div>
+
+
+
+      <div class="support-coin-wrapper">
+        <div class="image-wrapper">
+          <img class="sol-img" src="{%  static 'image/sol.png'  %}">
+        </div>
+        <span>
+          Solana </span>
+      </div>
+
+    </div>
+
+    <div class="lower-footer-wrapper">
+      <span>&copy; 2013 - 2026 {{app_config.app_name}}. All Rights Reserved</span>
+
+    </div>
+  </footer>
+  <script src="{% static 'javascript/user.js'%}"></script>
+  {% block extra_js %}{% endblock %}
 </body>
 
 </html>

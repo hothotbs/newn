@@ -2,27 +2,19 @@
 {% load static%}
 {% load humanize %}
 
+{% block extra_css%}
+<title>
+  Withdraw Funds
+</title>
+{%endblock%}
+
 
 {%block content%}
-<div class="title">
-  <h3>
-    Withdraw Funds
-  </h3>
-</div>
-<div>
-  {%if form.amount.errors%}
-  {%if messages%}
-  {%for message in messages%}
-  <div>
-    {{message}}
-  </div>
-  <div>
-    {{form.amount.errors}}
-  </div>
-  {%endfor%}
-  {%endif%}
-  {%endif%}
+<div class="form-wrapper">
   <form class="withdraw-form" method="post">
+    <p class="avail-balance">
+      Balance: ${{dashboard.total_bal}} USD
+    </p>
     {%csrf_token%}
     {{form}}
     <button class="withdraw-btn" type="submit">
@@ -31,68 +23,4 @@
   </form>
 </div>
 
-<div class="history-heading">
-  <h2>
-    Withdrawal History
-  </h2>
-</div>
-<div class="history">
-
-  <div class="history-list">
-
-    {%if withdrawal_history%}
-    <table>
-      <tbody>
-
-        <tr>
-          <th>Amount withdraw</th>
-          <th>Status</th>
-        </tr>
-
-        {%for withdraw in withdrawal_history %}
-        <tr class="withdraw-tr">
-          <td>
-            <div class="amount-withdraw">
-              <div class="withdraw-icon-wrapper">
-                <img class="withdraw-icon" src="{% static 'image/withdraw.png'%}">
-                <img class="right-up" src="{% static 'image/right-up.png'%}">
-              </div>
-              <div>
-                <p>${{withdraw.amount|intcomma}}</p>
-                <span> {{withdraw.created_on}}</span>
-              </div>
-            </div>
-
-          </td>
-          {%if withdraw.status == "pending" %}
-          <td>
-            <p class="pending-withdraw">{{withdraw.status}}</p>
-          </td>
-          {%elif withdraw.status == 'approved' %}
-          <td>
-            <p class="approved-withdraw">{{withdraw.status}}</p>
-          </td>
-          {%elif withdraw.status == 'reject' %}
-          <td>
-            <p class="reject-withdraw">{{withdraw.status}}</p>
-          </td>
-          {%endif%}
-
-        </tr>
-
-        {%endfor%}
-        <tr>
-          <th></th>
-          <th></th>
-        </tr>
-
-    </table>
-
-    </tbody>
-    {%endif%}
-
-
-
-  </div>
-</div>
 {% endblock %}

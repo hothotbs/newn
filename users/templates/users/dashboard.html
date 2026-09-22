@@ -2,12 +2,15 @@
 {% load static%}
 {% load humanize%}
 
+
+{% block extra_css%}
+<title>
+  Dashboard
+</title>
+{%endblock%}
+
 {%block content%}
-<div class="title">
-  <h1>
-    {{dashbord.user.first_name|capfirst}}'s Dashboard
-  </h1>
-</div>
+
 <div class="investment-wrapper">
   <div class="  invest">
     <p class="dash-label">Account Level:</p>
@@ -15,7 +18,7 @@
   </div>
   <div class="invest">
     <p class="dash-label">Account Name:</p>
-    <p class="acc-name ">{{dashbord.user.first_name|capfirst}} {{dashbord.user.last_name|capfirst}}</p>
+    <p class="acc-name ">{{dashbord.user.full_name|capfirst}}</p>
   </div>
   <div class="invest ">
     <p class="dash-label">invest:</p>
@@ -31,58 +34,43 @@
   </div>
 </div>
 
+<div style="margin-top: 30px;" class="charts">
+  <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-seasonal-chart.js"></script>
+  <tv-seasonal-chart symbol="NASDAQ:TSLA" theme="light"></tv-seasonal-chart>
+</div>
+
 <div class="trading-view_wrapper">
 
-  <h2 class="trading-head">
-    Forex Pair Traded By Our AI Bot
-  </h2>
-  <h2 class="trading-head">
-    Crypto Pair Mined By Our AI Bot
-  </h2>
+  <div>
+    <h2 class="trading-head">
+      Forex Pair Traded By Bot
+    </h2>
+    <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-forex-table.js"></script>
+    <tv-forex-table theme="light"></tv-forex-table>
+  </div>
 
-  <!-- TradingView Widget BEGIN -->
-  <div class="tradingview-widget-container">
-    <div class="tradingview-widget-container__widget"></div>
+  <div>
+    <h2 class="trading-head">
+      Crypto Pair Mined By Bot
+    </h2>
 
-
-    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
-      {
-        "market": "forex",
-          "showToolbar": true,
-            "defaultColumn": "overview",
-              "defaultScreen": "general",
-                "isTransparent": false,
-                  "locale": "en",
-                    "colorTheme": "light",
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+        {
+          "defaultColumn": "overview",
+            "screener_type": "crypto_mkt",
+              "displayCurrency": "USD",
+                "colorTheme": "light",
+                  "isTransparent": false,
+                    "locale": "en",
                       "width": "100%",
-                        "height": 300
-      }
-    </script>
+                        "height": "400"
+        }
+      </script>
+    </div>
+
   </div>
-  <!-- TradingView Widget END -->
-
-
-
-  <!-- TradingView Widget BEGIN -->
-  <div class="tradingview-widget-container">
-    <div class="tradingview-widget-container__widget"></div>
-
-    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
-      {
-        "defaultColumn": "overview",
-          "screener_type": "crypto_mkt",
-            "displayCurrency": "USD",
-              "colorTheme": "light",
-                "isTransparent": false,
-                  "locale": "en",
-                    "width": "100%",
-                      "height": 300
-      }
-    </script>
-  </div>
-  <!-- TradingView Widget END -->
-
-
 
 </div>
 {% endblock %}

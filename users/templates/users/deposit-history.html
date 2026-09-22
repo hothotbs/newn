@@ -1,0 +1,74 @@
+{% extends "users/base.html" %}
+{% load static%}
+{% load humanize %}
+
+
+
+{% block extra_css%}
+<title>
+  Deposit History
+</title>
+{%endblock%}
+
+{%block content%}
+
+<div class="history">
+
+  <div class="history-list">
+
+    {%if deposit_history%}
+    <table>
+      <tbody>
+
+        <tr>
+          <th>Amount Deposit</th>
+          <th>Status</th>
+        </tr>
+
+        {%for deposit in deposit_history %}
+        <tr class="depo-tr">
+          <td>
+            <div class="amount-withdraw">
+              <div class="withdraw-icon-wrapper">
+                <!-- <img class="deposit-icon" src="{% static 'image/deposit.png'%}"> -->
+                <img class="down-left" src="{% static 'image/down-left.png'%}">
+              </div>
+              <div>
+                <p>${{deposit.amount|intcomma}}</p>
+                <span> {{deposit.created_on}}</span>
+              </div>
+            </div>
+
+          </td>
+          {%if deposit.status == "pending" %}
+          <td>
+            <p class="pending-withdraw">{{deposit.status}}</p>
+          </td>
+          {%elif deposit.status == 'approved' %}
+          <td>
+            <p class="approved-withdraw">{{deposit.status}}</p>
+          </td>
+          {%elif deposit.status == 'rejected' %}
+          <td>
+            <p class="reject-withdraw">{{deposit.status}}</p>
+          </td>
+          {%endif%}
+
+        </tr>
+
+        {%endfor%}
+        <tr>
+          <th></th>
+          <th></th>
+        </tr>
+
+    </table>
+
+    </tbody>
+    {%endif%}
+
+
+
+  </div>
+</div>
+{% endblock %}

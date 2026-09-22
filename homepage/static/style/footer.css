@@ -1,28 +1,69 @@
 footer {
-  margin-top: 40px;
-  background-color: rgb(198, 198, 198);
-  position: relative;
-  bottom: 0;
+
+  background-color: rgb(231, 231, 231);
   padding: 40px 0;
+  font-weight: 500;
+  font-size: .8rem;
+  color: rgb(52, 51, 51);
 }
 
 .footer-wrapper {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 30px;
+  flex-direction: column;
+  gap: 50px;
+  padding: 30px 20px;
+
+}
+
+.upper-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  gap: 50px;
+  border-bottom: 1px solid rgb(183, 183, 183);
+  padding-bottom: 20px;
+}
+
+.footer_logo img {
+  width: 100px;
+}
+
+.footer-about-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: center;
+  height: 100%;
+  max-width: 500px;
+  min-width: 300px;
+
+}
+
+.footer-about-wrapper p {
+  line-height: 25px;
+}
+
+.quick-links {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.quick-links h3 {
+  white-space: nowrap;
 }
 
 .footer-link {
   display: flex;
-  gap: 90px;
-}
-
-.copyright {
-  display: flex;
-  gap: 70px;
-
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 15px;
 }
 
 .links {
@@ -31,5 +72,60 @@ footer {
 }
 
 .footer-link li {
-  list-style: none;
+  list-style: inside;
+
+}
+
+.footer-link li:hover,
+.footer-link a:hover {
+  color: #da9200;
+}
+
+.contact-wrapper {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 400px;
+}
+
+.contact-wrapper li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.contact-icon {
+  min-width: 30px;
+  height: 30px;
+
+}
+
+.contact-icon+a {
+  text-decoration: none;
+  color: black;
+}
+
+.contact-icon+a:hover {
+  color: #da9200;
+}
+
+.footer-email {
+  background: url(/static/image/email.png) center center no-repeat;
+  background-size: contain;
+}
+
+.footer-location {
+  background: url(/static/image/location.png) center center no-repeat;
+  background-size: contain;
+}
+
+.footer-support {
+  background: url(/static/image/customer-support.png) center center no-repeat;
+  background-size: contain;
+}
+
+.copyright p {
+  text-align: center;
 }

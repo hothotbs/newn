@@ -3,33 +3,25 @@
 {% load humanize %}
 
 
+{% block extra_css%}
+<title>
+  Select Deposit Method
+</title>
+{%endblock%}
 
 {%block content%}
-<div class="title">
-  <h1>
-    Make Deposit
-  </h1>
-</div>
-<div>
+<div class="form-wrapper">
 
-  {%if messages%}
-  {%for message in messages%}
-  <div>
-    {{message}}
-  </div>
-  {%endfor%}
-  {%endif%}
 
   <form class="withdraw-form" method="POST">
     {%csrf_token%}
-
-
+    <div class="deposit-text">
+      <p>Select from payment options below</p>
+      <span>Secure and safely deposit money into your account.</span>
+    </div>
     <div class="deposit-field-wrapper">
-
       {{form.mode_of_payment.label_tag}}
       {{form.mode_of_payment}}
-
-
     </div>
 
     <button class="withdraw-btn" type="submit">

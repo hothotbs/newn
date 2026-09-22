@@ -1,0 +1,192 @@
+.edit-profile-container {
+  width: 100%;
+}
+
+
+.edit-form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  padding: 50px 20px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px black;
+}
+
+.edit-form-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.helptext {
+  display: none !important;
+}
+
+.edit-form-wrapper form {
+  width: 100%;
+}
+
+.edit-form-wrap div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.helptext {
+  display: none;
+}
+
+
+
+#id_country,
+#id_email,
+#id_full_name,
+#id_last_name {
+  display: block;
+  margin-top: 2px;
+  border: 1px solid gray;
+  padding-left: 10px;
+  height: 40px;
+  width: 100%;
+  border-radius: 7px;
+  max-width: 400px;
+  outline: none;
+}
+
+#id_country:focus,
+#id_email:focus,
+#id_full_name:focus {
+  border: 2px solid rgb(43, 151, 1);
+}
+
+.edit-submit-btn {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.edit-submit-btn a {
+  padding: 10px 40px;
+  background-color: gray;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.edit-submit-btn a:active {
+
+  background-color: rgb(0, 0, 0);
+  color: white;
+
+}
+
+.edit-submit-btn a:hover {
+  cursor: pointer;
+  background-color: rgb(119, 118, 118);
+
+}
+
+.edit-submit-btn button {
+  padding: 10px 40px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+
+}
+
+
+
+.edit-submit-btn button:hover {
+  background-color: rgb(59, 59, 59);
+  cursor: pointer;
+
+}
+
+@media(max-width:720px) {
+  .edit-form-wrap {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+
+}
+
+
+.footer {
+  background-color: rgb(161, 161, 161);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  width: 100%;
+  padding: 50px 20px;
+  z-index: 0;
+}
+
+
+
+.upper-footer-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  overflow-x: hidden;
+  width: 100%;
+  overflow: auto;
+
+}
+
+.support-coin-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  gap: 5px;
+  padding: 25px 15px;
+  min-width: 0;
+  width: 100%;
+}
+
+.image-wrapper+span {
+  color: white;
+  font-size: 10px;
+}
+
+.btc-img {
+  max-width: 20px;
+}
+
+.eth-img {
+  max-width: 20px;
+
+}
+
+.doge-img {
+  max-width: 20px;
+}
+
+.usdt-img {
+  max-width: 20px;
+}
+
+.sol-img {
+  max-width: 20px;
+}
+
+.lower-footer-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

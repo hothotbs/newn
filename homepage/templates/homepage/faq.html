@@ -1,0 +1,15 @@
+{% extends 'homepage/base.html'%}
+{% load static%}
+{% block extra_css%}
+<title>
+  {{app_config.app_name}} FAQ
+</title>
+{%endblock%}
+
+{% block content %}
+{% include 'includes/page-title.html' with path="Faq" title="FAQ" %}
+{% include 'includes/faq.html' %}
+{% include 'includes/ready-to.html' %}
+
+
+{%endblock%}

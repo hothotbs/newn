@@ -1,0 +1,425 @@
+.title {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.deposit-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.deposit-text span {
+  font-size: .75rem;
+  color: #777777;
+  text-align: center;
+  line-height: 20px;
+}
+
+.deposit-alert {
+
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 10px;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  margin-left: 20px;
+
+}
+
+.avail-balance {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.withdraw-form {
+  background-color: white;
+  border-radius: 10px;
+  padding: 40px 0;
+  box-shadow: 1px 1px 5px black;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.withdraw-form div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.withdraw-form label {
+  margin-left: 10px;
+}
+
+.withdraw-input,
+#id_wallet_address,
+.withdraw-coin-input,
+#id_mode_of_payment,
+#id_password,
+.reset-form input {
+  border: 1px solid gray;
+  width: 400px;
+  height: 40px;
+  font-size: 17px;
+  border-radius: 7px;
+  padding-left: 10px;
+  background-color: transparent;
+  display: block;
+  outline: none;
+}
+
+.withdraw-input:focus,
+#id_wallet_address:focus,
+.withdraw-coin-input:focus,
+#id_mode_of_payment:focus,
+#id_password:focus,
+.reset-form input:focus {
+  border: 2px solid rgb(21, 134, 2);
+}
+
+.deposit-field-wrapper option {
+  font-size: 1rem;
+}
+
+.withdraw_pass-wrapper {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+}
+
+.withdraw_pass-wrapper div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+
+}
+
+.withdraw-btn {
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+  border-width: 0;
+  border-radius: 30px;
+  padding: 15px 30px;
+  box-shadow: 1px 1px 98px #1c1b1b00;
+  width: 400px;
+  cursor: pointer;
+}
+
+.withdraw-btn:hover {
+  background-color: rgb(32, 31, 31);
+
+}
+
+.deposit-field-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.deposit-field-wrapper input {
+  border-width: 2px;
+  width: 400px;
+  height: 40px;
+  margin-top: 3px;
+  border-radius: 7px;
+  padding-left: 20px;
+  background-color: transparent;
+  display: block;
+  outline: none;
+
+}
+
+.deposit-field-wrapper label {
+  margin-left: 10px;
+}
+
+#id_image {
+  font-size: 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px 140px 10px 10px;
+  cursor: pointer;
+  display: block;
+  ;
+}
+
+
+.history {
+
+  display: flex;
+  justify-content: center;
+}
+
+.history-heading h2 {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.history-list {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  padding: 10px 20px;
+  background-color: white;
+  box-shadow: 1px 1px 10px black;
+  margin-bottom: 50px;
+}
+
+
+th,
+td {
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+td:nth-child(1) {
+  text-align: start;
+  padding-left: 20px;
+  height: 60px;
+}
+
+th:nth-child(1) {
+  text-align: start;
+  padding-left: 20px;
+  height: 40px;
+}
+
+td:nth-child(2) {
+  text-align: right;
+  padding-right: 20px;
+  height: 60px;
+}
+
+th:nth-child(2) {
+  height: 20px;
+  text-align: right;
+  padding-right: 40px;
+}
+
+
+tr:hover {
+  background-color: rgb(236, 236, 236);
+}
+
+.amount-withdraw {
+  display: flex;
+  gap: 10px;
+}
+
+.right-up {
+  width: 40px;
+  padding: 8px;
+  border-radius: 20px;
+  background-color: rgba(202, 25, 25, 0.313);
+}
+
+.down-left {
+  width: 40px;
+  padding: 8px;
+  border-radius: 20px;
+  background-color: rgba(23, 208, 20, 0.171);
+}
+
+.amount-withdraw p {
+  font-weight: 600;
+}
+
+.amount-withdraw span {
+  color: gray;
+  font-size: 12px;
+  letter-spacing: 0px;
+}
+
+.withdraw-icon-wrapper {
+  z-index: 1;
+  position: relative;
+}
+
+.withdraw-icon {
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+  width: 18px;
+  padding: 3px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.deposit-icon {
+  position: absolute;
+  right: -11px;
+  bottom: -5px;
+  width: 20px;
+  padding: 5px;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.pending-withdraw {
+  text-transform: capitalize;
+  padding: 5px 20px;
+  background-color: rgb(236, 183, 22);
+  border-radius: 20px;
+  display: inline;
+}
+
+.reject-withdraw {
+  text-transform: capitalize;
+  padding: 5px 20px;
+  background-color: rgb(250, 28, 28);
+  border-radius: 20px;
+  display: inline;
+  color: white;
+}
+
+.approved-withdraw {
+  text-transform: capitalize;
+  padding: 5px 20px;
+  color: white;
+  background-color: rgba(26, 145, 13, 0.877);
+  border-radius: 20px;
+  display: inline;
+}
+
+.wallet-address_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+  gap: 5px;
+
+  background-color: white;
+  border-radius: 10px;
+  padding: 40px 10px;
+  box-shadow: 1px 1px 5px black;
+}
+
+.wallet-address {
+  display: block;
+  padding: 5px 10px;
+  border-radius: 7px;
+  background-color: black;
+  color: lightgray;
+  overflow-wrap: anywhere;
+  font-size: .75rem;
+}
+
+.withdraw-pass-form {
+  width: 100%;
+}
+
+.copy-and-wallet-address {
+  display: flex;
+  width: 100%;
+  gap: 5px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-address-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.copy-btn {
+  outline: none;
+  border-width: 0;
+  background-color: rgb(10, 168, 10);
+  padding: 5px 20px;
+  cursor: pointer;
+  color: white;
+  border-radius: 7px;
+  font-weight: bold;
+}
+
+.copy-btn:hover {
+  background-color: green;
+}
+
+.copy-btn:disabled {
+  background-color: rgb(161, 161, 161);
+  cursor: not-allowed;
+  color: black;
+}
+
+.qr-code {
+  width: 100px;
+}
+
+
+
+@media(max-width:700px) {
+  .sidebar-wrapper {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .close-sidebar {
+    display: block;
+  }
+
+  .withdraw-input,
+  #id_wallet_address,
+  .withdraw-coin-input,
+  #id_mode_of_payment,
+  #id_password,
+  .deposit-field-wrapper input {
+    width: 80%;
+    max-width: 400px;
+  }
+
+  .withdraw-btn {
+    width: 80%;
+    max-width: 400px;
+  }
+
+
+  body {
+    padding: 0;
+  }
+}
+
+.key-wrapper>div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#id_private_key {
+  padding: 10px 0 0 10px;
+  width: 100%;
+  outline: none;
+
+}
+
+label[for='id_private_key'] {
+  display: none;
+}

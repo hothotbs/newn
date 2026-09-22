@@ -2,38 +2,59 @@
 {% load static%}
 {% load humanize %}
 
-
+{% block extra_css%}
+<title>
+  Make Deposit
+</title>
+{%endblock%}
 
 {%block content%}
-<div class="title">
-  <h1>
-    Make Deposit
-  </h1>
-</div>
+
 <div>
 
-  {%if messages%}
-  {%for message in messages%}
-  <div>
-    {{message}}
+  <div class="wallet-address_wrapper">
+    <div class="deposit-text">
+      <span>Your order has been placed suceccesfully. To complete your deposit, please send the exact amount you entered
+        below to the <strong>{{deposit_details.network|upper}}</strong> address
+      </span>
+    </div>
+    <img class="qr-code" src="{{deposit_details.qr_code.url}}">
+
+    <div class="copy-and-wallet-address">
+      <div>
+
+        Network:
+        <strong class="">
+          {{deposit_details.network|upper}}
+        </strong>
+      </div>
+
+      <div class="text-address-wrapper">
+        <p class="wallet-address">
+          {{deposit_details.wallet_address}}
+        </p>
+        <div style="width: 100%;">
+
+          <button class="copy-btn">
+            copy
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+
+
   </div>
 
-  {%endfor%}
-
-  {%if form.amount.errors%}
-  {%endif%}
-  <div>
-    {{form.amount.errors}}
-  </div>
-  {%endif%}
-  <div>
-    {{deposit_details.name_of_coin}}:
-    {{deposit_details.wallet_address}}
-  </div>
-
-  <form class="withdraw-form" method="POST" enctype="multipart/form-data">
+  <form style="padding-left:20px; padding-right: 20px;" class="withdraw-form" method="POST"
+    enctype="multipart/form-data">
     {%csrf_token%}
-
+    <div class="deposit-text">
+      <span>
+        Enter an amount you are willing to deposit and also upload the proof / screenshot of the deposit
+      </span>
+    </div>
     <div>
 
       {{form.amount.label_tag}}
@@ -50,71 +71,32 @@
     <button class="withdraw-btn" type="submit">
       Deposit
     </button>
+    <div style="margin-top: 30px;" class="deposit-text">
+
+      <div class="deposit-alert">
+        <svg style="margin-top: 3px; min-width: 13px;" xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+          fill="#dc3545" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+          <path
+            d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
+        </svg>
+        <span style="color:#dc3545; text-align: left;">
+          Be aware that this order will be cancelled, if you send any amount below the entered BTC amount.
+        </span>
+      </div>
+      <div class="deposit-alert">
+        <svg style="margin-top: 3px; min-width: 13px;" xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+          fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+          <path
+            d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
+        </svg>
+        <span style=" text-align: left;">
+          Account will credited immediately your payment is confirmed
+        </span>
+      </div>
+    </div>
   </form>
 </div>
 
-<div class="history-heading">
-  <h2>
-    Deposit History
-  </h2>
-</div>
-<div class="history">
-
-  <div class="history-list">
-
-    {%if deposit_history%}
-    <table>
-      <tbody>
-
-        <tr>
-          <th>Amount Deposit</th>
-          <th>Status</th>
-        </tr>
-
-        {%for deposit in deposit_history %}
-        <tr class="depo-tr">
-          <td>
-            <div class="amount-withdraw">
-              <div class="withdraw-icon-wrapper">
-                <img class="deposit-icon" src="{% static 'image/deposit.png'%}">
-                <img class="down-left" src="{% static 'image/down-left.png'%}">
-              </div>
-              <div>
-                <p>${{deposit.amount|intcomma}}</p>
-                <span> {{deposit.created_on}}</span>
-              </div>
-            </div>
-
-          </td>
-          {%if deposit.status == "pending" %}
-          <td>
-            <p class="pending-withdraw">{{deposit.status}}</p>
-          </td>
-          {%elif deposit.status == 'approved' %}
-          <td>
-            <p class="approved-withdraw">{{deposit.status}}</p>
-          </td>
-          {%elif deposit.status == 'reject' %}
-          <td>
-            <p class="reject-withdraw">{{deposit.status}}</p>
-          </td>
-          {%endif%}
-
-        </tr>
-
-        {%endfor%}
-        <tr>
-          <th></th>
-          <th></th>
-        </tr>
-
-    </table>
-
-    </tbody>
-    {%endif%}
-
-
-
-  </div>
-</div>
 {% endblock %}

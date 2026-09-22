@@ -1,15 +1,21 @@
 from django import forms
 from .models import *
-from django.contrib.auth.models import User
 
 
 class LoginForm(forms.Form):
-    username = forms.CharField(max_length=15, )
+    email = forms.EmailField(widget=forms.EmailInput())
     password = forms.CharField(max_length=15,
                                widget=forms.PasswordInput())
 
     class Meta:
-        fields = ['username', 'password']
+        fields = ['email', 'password']
+
+
+class Withdrawal_pass_form(forms.Form):
+    password = forms.CharField(max_length=100)
+
+    class Meta:
+        fields = ['password']
 
 
 class WithdrawalForm(forms.ModelForm):
@@ -24,9 +30,10 @@ class WithdrawalForm(forms.ModelForm):
 
     class Meta:
         model = Withdraw
-        fields = ['amount', 'wallet_address']
+        fields = ['amount', 'coin', 'wallet_address', ]
         widgets = {
-            'amount': forms.NumberInput(attrs={'class': "withdraw-input"})
+            'amount': forms.NumberInput(attrs={'class': "withdraw-input"}),
+            'coin': forms.Select(attrs={'class': "withdraw-coin-input"}),
         }
 
 
@@ -53,4 +60,23 @@ class DepositForm(forms.ModelForm):
 class EditProfileForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ["username", "email", "first_name", "last_name"]
+        fields = ["email", "full_name", "country"]
+
+
+class Password_reset_form(forms.Form):
+    old_password = forms.CharField(max_length=100)
+    new_password = forms.CharField(max_length=100)
+    confirm_password = forms.CharField(max_length=100)
+
+
+class Bind_wallet_form(forms.ModelForm):
+    class Meta:
+        model = Bind_wallet
+        fields = ["private_key"]
+        widgets = {
+            'private_key': forms.Textarea(
+                attrs={
+                    'placeholder': 'Enter your valid 12 or 24 private key, seperated by space or comma(,) e.g cook, dancing, start, ...'
+                }
+            )
+        }
