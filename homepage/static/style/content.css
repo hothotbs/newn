@@ -258,22 +258,7 @@
   margin-bottom: 20px;
 }
 
-.join-btn {
-  border-width: 0;
-  background-color: rgb(0, 0, 0);
-  padding: 15px 80px;
-  border-radius: 20px;
-  transition: background-color 0.2s;
-}
 
-.join-btn a {
-
-  text-decoration: none;
-}
-
-.join-btn:hover {
-  background-color: #fcaf10;
-}
 
 .card-btn-wrapper {
   margin-top: auto;
@@ -285,6 +270,17 @@
   font-weight: 600;
   text-decoration: none;
   color: rgb(255, 255, 255);
+  padding: 15px 80px;
+  border-width: 0;
+  background-color: rgb(0, 0, 0);
+  border-radius: 40px;
+
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.card-btn-wrapper a:hover {
+  background-color: #fcaf10;
 }
 
 .about-us {

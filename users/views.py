@@ -372,6 +372,8 @@ def reset_password_link(request):
 
                 This link will expire in 30 minutes. If you didn't request a password reset, you can safely ignore this email — your password will remain unchanged.
 
+                
+
                 Thanks!
                 The {config('APP_NAME')}
 
